@@ -34,6 +34,11 @@ au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 
 au FileType go nmap <leader>r :w<cr> :GoRun<cr>
+au FileType go nmap <leader>R <Plug>(go-rename)
+au FileType go nmap <leader>A :w<cr> :GoAlternate!<cr>
+au FileType go nmap <leader>F :w<cr> :GoFillStruct<cr>
+au FileType go nmap <leader>T :w<cr> :GoAddTags<cr>
+au FileType go nmap <leader>RT :w<cr> :GoRemoveTags<cr>
 au FileType go nmap <leader>d <Plug>(go-doc <cword>)
 au FileType go nmap <leader>g <Plug>(go-def)
 au FileType go nmap <leader>b <Plug>(go-build)
@@ -52,6 +57,10 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <C-N> :lnext<CR>
 au FileType go nmap <C-M> :lprev<CR>
 
+
+au FileType go nmap <C-n> :cnext<CR>
+au FileType go nmap <C-m> :cprev<CR>
+
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 "au FileType go nmap <Leader>C :colorscheme molokai<CR>
 
@@ -60,12 +69,17 @@ au BufNewFile,BufReadPost *.md set filetype=markdown
 au WinLeave * set nocursorline
 au WinEnter * set cursorline
 
+au FileType c nmap <Leader>r :mak run<CR>
+au FileType make nmap <Leader>r :mak run<CR>
+
+
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_list_type = "quickfix"
 
 let g:go_metalinter_autosave = 1"
 let g:go_metalinter_command = "gometalinter.v2 ./..."
@@ -92,6 +106,8 @@ let g:airline#extensions#tabline#tab_nr_type = 0
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#fnamemod = ':.'
+let g:airline#extensions#tabline#fnamecollapse = 0
 " don't want a function name at expense of a git branch or filename
 let g:airline#extensions#tagbar#enabled = 0
 
@@ -125,12 +141,12 @@ syntax enable
 let mapleader = " "
 let maplocalleader = "  "
 
-"map <C-n> :cnext<CR>
-"map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
 nnoremap <leader>T :TagbarToggle<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>D :bd<CR>
+nnoremap <leader>M :make<CR>
 
 nnoremap <localleader>b :FufDir<CR>
 nnoremap <localleader>f :FufFile<CR>
@@ -144,4 +160,7 @@ nnoremap <Down> :resize +2<CR>
 nnoremap <leader><TAB> <C-w><C-w><CR>
 inoremap jj <ESC>
 
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
+au BufNewFile *.qqq i foo<cr>:w<cr>
