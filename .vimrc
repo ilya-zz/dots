@@ -2,10 +2,12 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
+set path+=**
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'fatih/vim-go'
+Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-sensible'
@@ -147,6 +149,7 @@ nnoremap <leader>T :TagbarToggle<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>D :bd<CR>
 nnoremap <leader>M :make<CR>
+nnoremap <leader>GG :Ag 
 
 nnoremap <localleader>b :FufDir<CR>
 nnoremap <localleader>f :FufFile<CR>
