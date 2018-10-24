@@ -1,12 +1,11 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATHe
-#
+#  If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH
+export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:$PATH"
+export PATH=$PATH:${HOME}/local/istio-0.7.1/bin
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/ilyaz/.oh-my-zsh
-export GOPATH=/Users/ilyaz/goworkspace
 
-export PATH=$GOPATH/bin:$PATH
-#
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -62,12 +61,17 @@ ZSH_THEME="sunrise"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  hg
-  docker
-  npm
   aws
+  curl
+  docker
+  git
+  fastgit
+  helm
+  hg
+  kubectl
+  npm
   qemu
+  vagrant
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -100,3 +104,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ilyaz/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/ilyaz/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ilyaz/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/ilyaz/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/ilyaz/.sdkman"
+[[ -s "/Users/ilyaz/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ilyaz/.sdkman/bin/sdkman-init.sh"
+
+[[ -s "/Users/ilyaz/.kcaliases" ]] && source "/Users/ilyaz/.kcaliases"
+alias gogo='cd $GOPATH/src'
+export PATH="$PATH:/Users/ilyaz/istio-0.7.1/bin"
+PROMPT="$USER@%m ${PROMPT}"
+
+fpath+=~/.zfunc

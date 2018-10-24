@@ -26,6 +26,7 @@ Plugin 'diepm/vim-rest-console'
 Plugin 'L9'
 Bundle 'uarun/vim-protobuf'
 Bundle 'jewes/Conque-Shell'
+Bundle 'rust-lang/rust.vim'
 call vundle#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -65,6 +66,8 @@ au FileType go nmap <C-m> :cprev<CR>
 
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 "au FileType go nmap <Leader>C :colorscheme molokai<CR>
+"
+au FileType rust nmap <Leader>r :RustRun<cr>
 
 au BufNewFile,BufReadPost *.md set filetype=markdown
 
@@ -81,7 +84,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-let g:go_list_type = "quickfix"
+let g:go_list_type="quickfix"
 
 let g:go_metalinter_autosave = 1"
 let g:go_metalinter_command = "gometalinter.v2 ./..."
@@ -89,7 +92,7 @@ let g:go_metalinter_enabled = ['vet', 'golint', 'deadcode', 'errcheck']
 "
 let g:user_emmet_mode='a'
 let g:user_emmet_install_global = 0
-au FileType tmpl,html,css EmmetInstall
+au FileType jsx,tsx,tmpl,html,css EmmetInstall
 
 " vim airline status line settings
 let g:airline_left_sep=''
@@ -166,4 +169,3 @@ inoremap jj <ESC>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-au BufNewFile *.qqq i foo<cr>:w<cr>
