@@ -6,8 +6,8 @@ set path+=**
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'fatih/vim-go'
-Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-sensible'
@@ -27,11 +27,15 @@ Plugin 'L9'
 Bundle 'uarun/vim-protobuf'
 Bundle 'jewes/Conque-Shell'
 Bundle 'rust-lang/rust.vim'
+Bundle 'gyim/vim-boxdraw'
 call vundle#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsJumpForwardTrigger="<c-z>"
+
+
+
 
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
@@ -40,7 +44,7 @@ au FileType go nmap <leader>r :w<cr> :GoRun<cr>
 au FileType go nmap <leader>R <Plug>(go-rename)
 au FileType go nmap <leader>A :w<cr> :GoAlternate!<cr>
 au FileType go nmap <leader>F :w<cr> :GoFillStruct<cr>
-au FileType go nmap <leader>T :w<cr> :GoAddTags<cr>
+au FileType go nmap <leader>TT :w<cr> :GoAddTags<cr>
 au FileType go nmap <leader>RT :w<cr> :GoRemoveTags<cr>
 au FileType go nmap <leader>d <Plug>(go-doc <cword>)
 au FileType go nmap <leader>g <Plug>(go-def)
@@ -139,6 +143,7 @@ set ignorecase
 set smartcase
 
 set showtabline=2
+set virtualedit+=all
 
 syntax on
 syntax enable
@@ -168,4 +173,8 @@ inoremap jj <ESC>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+nnoremap <leader>a :Ack!<Space>
+nnoremap <leader>aa :AckWindow<cr>
+
 
