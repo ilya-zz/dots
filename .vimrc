@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 set path+=**
 
 call vundle#begin()
+Bundle 'gyim/vim-boxdraw'
 Bundle 'jewes/Conque-Shell'
 Bundle 'rust-lang/rust.vim'
 Bundle 'uarun/vim-protobuf'
@@ -12,6 +13,7 @@ Plugin 'L9'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'diepm/vim-rest-console'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'elixir-editors/vim-elixir'
 Plugin 'elzr/vim-json'
 Plugin 'fatih/molokai'
 Plugin 'fatih/vim-go'
@@ -21,6 +23,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
+Plugin 'slashmili/alchemist.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-sensible'
@@ -28,9 +31,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'elixir-editors/vim-elixir'
-Plugin 'slashmili/alchemist.vim'
-Bundle 'gyim/vim-boxdraw'
 call vundle#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
