@@ -5,36 +5,37 @@ set rtp+=~/.vim/bundle/Vundle.vim
 set path+=**
 
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'fatih/vim-go'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'fatih/molokai'
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'mattn/emmet-vim'
-Plugin 'honza/vim-snippets'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'elzr/vim-json'
-Plugin 'pangloss/vim-javascript'
-Plugin 'diepm/vim-rest-console'
-Plugin 'L9'
-Bundle 'uarun/vim-protobuf'
 Bundle 'jewes/Conque-Shell'
 Bundle 'rust-lang/rust.vim'
+Bundle 'uarun/vim-protobuf'
+Plugin 'L9'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'diepm/vim-rest-console'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'elzr/vim-json'
+Plugin 'fatih/molokai'
+Plugin 'fatih/vim-go'
+Plugin 'honza/vim-snippets'
+Plugin 'majutsushi/tagbar'
+Plugin 'mattn/emmet-vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
 Bundle 'gyim/vim-boxdraw'
 call vundle#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsJumpForwardTrigger="<c-z>"
-
-
 
 
 au FileType go nmap <Leader>s <Plug>(go-implements)
@@ -46,6 +47,7 @@ au FileType go nmap <leader>A :w<cr> :GoAlternate!<cr>
 au FileType go nmap <leader>F :w<cr> :GoFillStruct<cr>
 au FileType go nmap <leader>TT :w<cr> :GoAddTags<cr>
 au FileType go nmap <leader>RT :w<cr> :GoRemoveTags<cr>
+au FileType go nmap <leader>gi :w<cr> :GoImpl
 au FileType go nmap <leader>d <Plug>(go-doc <cword>)
 au FileType go nmap <leader>g <Plug>(go-def)
 au FileType go nmap <leader>b <Plug>(go-build)
@@ -63,7 +65,6 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 
 au FileType go nmap <C-N> :lnext<CR>
 au FileType go nmap <C-M> :lprev<CR>
-
 
 au FileType go nmap <C-n> :cnext<CR>
 au FileType go nmap <C-m> :cprev<CR>
@@ -176,5 +177,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 nnoremap <leader>a :Ack!<Space>
 nnoremap <leader>aa :AckWindow<cr>
+
+nnoremap <leader>Gb :Gblame<cr>
+nnoremap <leader>Gc :Gcommit<cr>
 
 
