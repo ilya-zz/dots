@@ -1,0 +1,5 @@
+alias sc=systemctl
+alias t=tmux new -s dev
+
+alias kubectl=microk8s.kubectl
+alias kc=kubectl

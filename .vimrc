@@ -31,6 +31,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'tell-k/vim-autopep8'
+Plugin 'junegunn/fzf'
 call vundle#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -73,6 +75,8 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 "au FileType go nmap <Leader>C :colorscheme molokai<CR>
 "
 au FileType rust nmap <Leader>r :RustRun<cr>
+
+"au FileType python setlocal formatprg=autopep8\ -
 
 au BufNewFile,BufReadPost *.md set filetype=markdown
 
@@ -120,6 +124,9 @@ let g:airline#extensions#tabline#fnamemod = ':.'
 let g:airline#extensions#tabline#fnamecollapse = 0
 " don't want a function name at expense of a git branch or filename
 let g:airline#extensions#tagbar#enabled = 0
+
+
+let g:autopep8_on_save = 1
 
 
 filetype plugin indent on
@@ -181,4 +188,6 @@ nnoremap <leader>aa :AckWindow<cr>
 nnoremap <leader>Gb :Gblame<cr>
 nnoremap <leader>Gc :Gcommit<cr>
 
+nnoremap <leader>f :<C-u>FZF<CR>
 
+source ~/.vim/cscope_maps.vim

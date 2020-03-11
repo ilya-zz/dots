@@ -1,0 +1,4 @@
+export KAFKA_PATH=/home/ilyaz/local/kafka_2.12-2.3.0
+export SPARK_PATH=/home/ilyaz/local/spark-2.4.4-bin-hadoop2.7
+
+export PATH="$KAFKA_PATH/bin:$SPARK_PATH/bin:$PATH"
