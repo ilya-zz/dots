@@ -23,6 +23,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
@@ -33,6 +34,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'tell-k/vim-autopep8'
 Plugin 'junegunn/fzf'
+Plugin 'jremmen/vim-ripgrep'
 call vundle#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -137,7 +139,7 @@ set hlsearch
 set autowrite
 set cursorline
 set colorcolumn=80
-set tabstop=4
+set tabstop=8
 set shiftwidth=4
 set undofile
 set undodir=~/.vim/undodir
@@ -152,6 +154,7 @@ set smartcase
 
 set showtabline=2
 set virtualedit+=all
+set title
 
 syntax on
 syntax enable
@@ -191,3 +194,6 @@ nnoremap <leader>Gc :Gcommit<cr>
 nnoremap <leader>f :<C-u>FZF<CR>
 
 source ~/.vim/cscope_maps.vim
+
+let g:rg_command = 'rg --vimgrep -S'
+
